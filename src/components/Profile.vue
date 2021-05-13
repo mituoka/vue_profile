@@ -28,9 +28,9 @@ export default {
     return {
       hobby_list:{
         '読書':'主にデザイン・プログラミング・仕事効率化関係の本を中心に読んでいます。たまに短編小説も読みます。',
-        // 'ゲーム':'スマホゲームでは原神とにゃんこ戦争にはまっています。Switchではたまにモンハンとスマブラしてます。',
+        'ゲーム':'スマホゲームでは原神とにゃんこ戦争にはまっています。Switchではたまにモンハンとスマブラしてます。',
         '筋トレ':'家に10kgと5kgのダンベルと腹筋ローラーがあり、腕と腹筋をメインに筋トレをしています。',
-        // 'IT':'Python関係とJavascriptのフレームワークに興味があります。主にudemyでインプットを行なっています。Outputとしてポートフォリオやアプリを作成しています。',
+        'IT':'Python関係とJavascriptのフレームワークに興味があります。主にudemyでインプットを行なっています。Outputとしてポートフォリオやアプリを作成しています。',
       },
       link_list:{
         'Qiita':'https://qiita.com/Aqua_MT',
@@ -87,6 +87,7 @@ div.content {
   font-size: 16px;
   height: 300px;
   width: 10%px;
+  padding: 10px;
   background-color: rgba(255, 238, 125, 0.8);
   border-radius: 3%;
 }

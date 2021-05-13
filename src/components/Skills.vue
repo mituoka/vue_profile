@@ -1,8 +1,10 @@
 <template>
   <div class="skills">
-    <div class="content" v-for="i in 6" :key=i>
-    <h3> {{ name }} </h3>
-    <p> {{ text }} </p>
+    <div class="content" v-for="(content,skill) in skill_list" :key=skill>
+    <div>
+      <h3> {{ skill }} </h3>
+      <p> {{ content }} </p>
+    </div>
   </div>
   </div>
 </template>
@@ -12,8 +14,14 @@ export default {
   name: 'Skills',
   data () {
     return {
-      name: 'カメラアプリを作成した',
-      text: 'このような意図で作成しました。ここをこのように工夫しました。ここが難しかったです。今後はこうゆう機能を追加したいです。'.repeat(3)
+      skill_list:{
+        'python':'Djangoを使用したWEB開発の経験があります。AI分野を現在勉強中です',
+        'HTML':'Adobe XDのデザインカンプからコーディングを行うことができます。',
+        'CSS':'レスポンシブデザインでのページ作成が可能です。',
+        'Javascript':'Vue.jsとReactを中心に学習中です',
+        'SQL':'基本的なSQLはマスターしています',
+        'AWS':'ECS、ELB,EC2,Cloud Watch,S3の運用経験があります',
+      },
     }
   }
 }
@@ -28,9 +36,11 @@ div.skill {
 
 div.content {
   background-color: #eee;
-  display: inline-block;
+  /* display: inline-block; */
+  display: inline-flex;
   margin: 10px;
   width: 30%;
+  height: 300px;
 }
 
 h3 {
