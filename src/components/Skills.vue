@@ -48,7 +48,7 @@ h3 {
 }
 
 p {
-  width: 90%;
+  padding: 10px;
   display: inline-block;
   text-align: left;
 }
