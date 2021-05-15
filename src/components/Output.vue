@@ -1,9 +1,18 @@
 <template>
   <div class="output">
-    <div class="content" v-for="i in 6" :key=i>
-    <h3> {{ name }} </h3>
-    <p> {{ text }} </p>
-  </div>
+    <div class="content" v-for="portfolio in portfolio_list" :key=portfolio>
+      <div class='portfolio_title'>{{portfolio.title}}</div>
+      <div class='portfolio_content'>
+        <img v-bind:src='portfolio.image_url' class='portfolio_image'>
+        <!-- <img src="@/assets/hobbymanegement.jpg" class='portfolio_image'> -->
+        <!-- <v-img v-bind:src='portfolio.image_url' class='portfolio_image'></v-img> -->
+        <div>
+          <div class='portfolio_url'>使用技術：{{portfolio.use_technology}}</div>
+          <div class='portfolio_url'>{{portfolio.description}}</div>
+        </div>
+      </div>
+      <a v-bind:href='portfolio.url' class='portfolio_url'>リンク</a>
+    </div>
   </div>
 </template>
 
@@ -12,8 +21,21 @@ export default {
   name: 'Output',
   data () {
     return {
-      name: 'カメラアプリを作成した',
-      text: 'このような意図で作成しました。ここをこのように工夫しました。ここが難しかったです。今後はこうゆう機能を追加したいです。'.repeat(3)
+      portfolio_list:{
+        portfolio1:{
+          title:'Hobby manegiment',
+          image_url:'@/assets/hobbymanegement.jpg',
+          use_technology:'Django(Python),HTML・CSS,Ajax,S3(AWS),heroku',
+          description:'写真投稿を文章と一緒に投稿し管理できるサイトカテゴリー名で分類できajaxでのカテゴリー検索機能をつけている。ユーザIDとパスワードは制限をかけているのでご連絡ください',
+          url:'https://hobbymanagement.herokuapp.com/'
+        },
+        portfolio2:{
+          title:'a2',
+          image_url:'b2',
+          description:'c2',
+          url:'d2'
+        }
+      }
     }
   }
 }
@@ -33,14 +55,24 @@ div.content {
   width: 30%;
 }
 
-h3 {
-  color: white;
+.portfolio_title{
+  margin: auto;
+  width: 30%;
 }
 
-p {
-  width: 90%;
-  display: inline-block;
-  text-align: left;
+.portfolio_content{
+  display: flex;
+  justify-content: space-between;
 }
+
+.portfolio_url{
+  background-color: aqua;
+}
+
+.portfolio_image{
+  background-color: gold;
+  width: 300px;
+}
+
 
 </style>
